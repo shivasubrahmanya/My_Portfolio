@@ -235,13 +235,6 @@ npx shadcn-ui@latest add [component-name]
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📧 Contact
-
-**Shivasubrahmanya K C**
-- Email: [your-email@example.com]
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [Your GitHub Profile]
-
 ---
 
 ⭐ If you found this portfolio helpful, please give it a star!
