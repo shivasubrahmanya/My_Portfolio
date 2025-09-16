@@ -9,7 +9,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "shivasubrahmanyakcgmail.com",
+      value: "shivasubrahmanyakc@gmail.com",
       href: "mailto:shivasubrahmanyakc@gmail.com"
     },
     {
@@ -157,3 +157,4 @@ const Contact = () => {
 
 
 export default Contact;
+
