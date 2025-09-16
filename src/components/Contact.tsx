@@ -9,14 +9,14 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      value: "shivasubrahmanya8@gmail.com",
-      href: "mailto:shivasubrahmanya8@gmail.com"
+      value: "shivasubrahmanyakcgmail.com",
+      href: "mailto:shivasubrahmanyakc@gmail.com"
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Phone",
-      value: "+91 8472592559",
-      href: "tel:+918472592559"
+      value: "+91 8197982359",
+      href: "tel:+918197982359"
     },
     {
       icon: <MapPin className="w-5 h-5" />,
@@ -154,5 +154,6 @@ const Contact = () => {
     </section>
   );
 };
+
 
 export default Contact;
