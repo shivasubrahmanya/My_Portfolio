@@ -42,7 +42,7 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       label: "Email",
-      href: "mailto:shivasubrahmanya8@gmail.com",
+      href: "mailto:shivasubrahmanyakc@gmail.com",
       color: "hover:text-tech-teal"
     }
   ];
@@ -157,4 +157,5 @@ const Contact = () => {
 
 
 export default Contact;
+
 
