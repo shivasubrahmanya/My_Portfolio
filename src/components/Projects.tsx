@@ -35,7 +35,7 @@ const Projects = () => {
       title: "Foodwallah",
       description: "Food Ordering Web Application - A fully frontend-based food ordering web app built with HTML, CSS, and JavaScript. Designed to be responsive and interactive for an engaging user experience.",
       icon: <Utensils className="w-8 h-8" />,
-      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX"],
+      technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX","React" ],
       features: [
         "Responsive web design",
         "Interactive user interface",
@@ -166,5 +166,6 @@ const Projects = () => {
     </section>
   );
 };
+
 
 export default Projects;
