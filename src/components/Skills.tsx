@@ -12,7 +12,7 @@ const Skills = () => {
     {
       title: "AI & Machine Learning",
       icon: <Brain className="w-6 h-6" />,
-      skills: ["Deep Learning", "Neural Networks", "TensorFlow",]
+      skills: ["Deep Learning", "Neural Networks", "TensorFlow,Py","Pytorch"]
     },
     {
       title: "Programming",
@@ -75,5 +75,6 @@ const Skills = () => {
     </section>
   );
 };
+
 
 export default Skills;
