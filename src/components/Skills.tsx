@@ -1,80 +1,66 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code2, Database, Brain, BarChart3 } from "lucide-react";
+import "./Skills.css";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Data Science",
-      icon: <BarChart3 className="w-6 h-6" />,
-      skills: ["Numpy", "Pandas", "Scikit-Learn","Matplotlib" ]
+      id: "SYS_01",
+      title: "Data Science & Analysis",
+      skills: ["Numpy", "Pandas", "Scikit-Learn", "Matplotlib"]
     },
     {
+      id: "SYS_02",
       title: "AI & Machine Learning",
-      icon: <Brain className="w-6 h-6" />,
-      skills: ["Deep Learning", "Neural Networks", "TensorFlow,Py","Pytorch"]
+      skills: ["Deep Learning", "Neural Networks", "TensorFlow", "PyTorch"]
     },
     {
-      title: "Programming",
-      icon: <Code2 className="w-6 h-6" />,
+      id: "SYS_03",
+      title: "Core Engineering",
       skills: ["Python", "SQL", "JavaScript", "HTML/CSS", "R", "Java", "C/C++"]
     },
     {
-      title: "Tools & Technologies",
-      icon: <Database className="w-6 h-6" />,
-      skills: ["Microsoft Power BI","Git","Jupyter","GitHub"]
+      id: "SYS_04",
+      title: "Tools & Infrastructure",
+      skills: ["Microsoft Power BI", "Git", "Jupyter", "GitHub"]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
-      <div className="absolute inset-0 bg-gradient-to-br from-tech-purple/5 to-tech-blue/5"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-gradient">Technical Skills</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive toolkit for transforming data into intelligent solutions
+    <section id="skills" className="skills-section">
+      <div className="skills-wrapper">
+        <div className="skills-header">
+          <div className="skills-title-group">
+            <span className="skills-index">Index_02</span>
+            <h2 className="skills-heading">Technical_Specifications</h2>
+          </div>
+          <p className="skills-description">
+            // COMPREHENSIVE TOOLKIT FOR DATA TRANSFORMATION AND INTELLIGENT SOLUTIONS
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <Card 
-              key={category.title} 
-              className="card-gradient border-border/50 hover:border-primary/50 transition-smooth hover:scale-105 card-shadow group animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-2xl group-hover:text-primary transition-smooth">
-                  <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
-                    {category.icon}
-                  </div>
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className="bg-muted/50 hover:bg-primary hover:text-primary-foreground transition-smooth cursor-default"
-                    >
+        <div className="skills-grid">
+          {skillCategories.map((category) => (
+            <div key={category.id} className="skill-category">
+              <div className="skill-category-header">
+                <h3 className="skill-category-title">{category.title}</h3>
+                <span className="skill-category-id">{category.id}</span>
+              </div>
+
+              <div className="skill-list">
+                {category.skills.map((skill) => (
+                  <div key={skill} className="skill-item">
+                    <div className="skill-dot" />
+                    <span className="skill-name">
                       {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 };
-
 
 export default Skills;
