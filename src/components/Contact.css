@@ -200,7 +200,7 @@
 }
 
 .form-textarea:focus {
-    /* ring styles if needed */
+    border-bottom: 1px solid var(--color-accent);
 }
 
 .submit-btn {
