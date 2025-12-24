@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { StatusBar } from "@/components/StatusBar";
+import { BackgroundEffect } from "./BackgroundEffect";
 import "./LayoutWrapper.css";
 
 interface LayoutWrapperProps {
@@ -9,6 +10,7 @@ interface LayoutWrapperProps {
 export const LayoutWrapper = ({ children }: LayoutWrapperProps) => {
     return (
         <div className="layout-wrapper">
+            <BackgroundEffect />
             {/* Decorative Top Bar */}
             <div className="layout-top-bar">
                 <div className="layout-top-bar-accent" />

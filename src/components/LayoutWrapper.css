@@ -1,12 +1,14 @@
 /* LayoutWrapper.css */
 .layout-wrapper {
     min-height: 100vh;
-    background-color: var(--color-background);
+    /* background-color: var(--color-background); <-- Removed to allow canvas visibility */
     color: var(--color-foreground);
     display: flex;
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    isolation: isolate;
+    /* Create new stacking context */
 }
 
 .layout-top-bar {
