@@ -47,7 +47,11 @@ const Hero = () => {
           </div>
 
           <div className="actions">
-            <button className="btn btn-outline" style={{ fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <button
+              className="btn btn-outline"
+              style={{ fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
               [ View_Work ]
             </button>
             <button className="btn btn-ghost" style={{ fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
