@@ -9,6 +9,8 @@ const Projects = () => {
       description: "A Machine Learning project that transforms present-day images into historically accurate past renditions of the same locations, bridging time by recreating the visual essence of different historical eras.",
       icon: <Clock size={20} />,
       technologies: ["Machine Learning", "Computer Vision", "Python", "Image Processing"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/Digital-time-Machine",
       features: [
         "Historical image transformation",
         "Visual essence recreation",
@@ -22,6 +24,8 @@ const Projects = () => {
       description: "Your Personalized Learning Companion - A web platform with speech recognition & text-to-speech for accessibility. Features personalized and gamified learning modules for enhanced engagement.",
       icon: <Users size={20} />,
       technologies: ["JavaScript", "HTML", "CSS", "Speech Recognition", "Text-to-Speech"],
+      demoUrl: "https://eduease-hazel.vercel.app/",
+      codeUrl: "https://github.com/shivasubrahmanya/EDUEASE",
       features: [
         "Speech recognition integration",
         "Text-to-speech functionality",
@@ -35,6 +39,8 @@ const Projects = () => {
       description: "Food Ordering Web Application - A fully frontend-based food ordering web app built with HTML, CSS, and JavaScript. Designed to be responsive and interactive for an engaging user experience.",
       icon: <Utensils size={20} />,
       technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "UI/UX", "React"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/Manvith-kumar16/FoodWallah",
       features: [
         "Responsive web design",
         "Interactive user interface",
@@ -44,16 +50,18 @@ const Projects = () => {
     },
     {
       id: "04",
-      title: "Gmail Auto-Responder",
+      title: "RAG Chatbot (PDF Intelligence System)",
       description:
-        "An n8n automation workflow that automatically replies to incoming Gmail messages with customized templates. Helps save time by sending quick, contextual responses.",
+        "An n8n-powered Retrieval-Augmented Generation (RAG) chatbot that enables intelligent question-answering over large PDF documents like Amazon’s Annual Report. The system converts documents into vector embeddings, retrieves relevant context, and generates accurate, context-aware responses using modern LLMs.",
       icon: <Mail size={20} />,
-      technologies: ["n8n", "Gmail API", "JavaScript"],
+      technologies: ["n8n", "Pinecone", "Ollama Embeddings", "Gemini", "RAG"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/n8n-Automations/tree/main/RAG%20agent",
       features: [
-        "Automatic email replies",
-        "Customizable response templates",
-        "Trigger on new Gmail messages",
-        "Seamless Gmail API integration"
+        "Automated PDF ingestion and chunking from Google Drive",
+        "Vector storage and semantic search using Pinecone",
+        "Context-aware chatbot with memory support",
+        "Local embeddings via Ollama for cost-efficient retrieval"
       ],
     },
     {
@@ -63,6 +71,8 @@ const Projects = () => {
         "An n8n workflow that sends instant Slack alerts for important triggers like new form submissions or database updates. Ensures teams never miss critical updates.",
       icon: <Bell size={20} />,
       technologies: ["n8n", "Slack API", "Webhooks"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/n8n-Automations/tree/main/Order_E-mail_Automation",
       features: [
         "Real-time Slack alerts",
         "Webhook-based triggers",
@@ -123,14 +133,24 @@ const Projects = () => {
 
                 {/* Actions */}
                 <div className="project-actions">
-                  <button className="btn btn-primary project-btn">
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary project-btn"
+                  >
                     <ExternalLink size={12} />
                     View_Demo
-                  </button>
-                  <button className="btn btn-ghost project-btn">
+                  </a>
+                  <a
+                    href={project.codeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-ghost project-btn"
+                  >
                     <Github size={12} />
                     Source_Code
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
