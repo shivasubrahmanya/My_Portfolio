@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell } from "lucide-react";
+import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell, Brain } from "lucide-react";
 import "./Projects.css";
 
 const Projects = () => {
@@ -79,7 +79,85 @@ const Projects = () => {
         "Customizable channel notifications",
         "Streamlined team communication"
       ],
-    }
+    },
+    {
+      id: "06",
+      title: "AI Mental Wellness & Burnout Assistant",
+      description:
+        "A full-stack AI-powered mental wellness application that analyzes emotions, detects burnout, and provides personalized wellness recommendations using advanced machine learning models.",
+      icon: <Brain size={20} />,
+      technologies: [
+        "FastAPI",
+        "Streamlit",
+        "Hugging Face",
+        "OpenCV",
+        "Faster Whisper",
+        "Microsoft Azure",
+        "Docker"
+      ],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/AI-Mental-Wellness-and-Burnout-Assistant",
+      features: [
+        "Text, face, voice, and video emotion analysis",
+        "AI-driven burnout assessment",
+        "Personalized wellness suggestions",
+        "Anonymous privacy-first mode",
+        "Real-time emotion tracking",
+        "Azure cloud deployment"
+      ],
+    },
+    {
+  id: "07",
+  title: "SynergySphere – Team Collaboration MVP",
+  description:
+    "A full-stack team collaboration MVP that enables project management, task tracking, real-time communication, and smart notifications with a modern, responsive UI.",
+  icon: <Users size={20} />,
+  technologies: [
+    "React",
+    "TypeScript",
+    "FastAPI",
+    "MySQL",
+    "WebSockets",
+    "JWT",
+    "CSS3"
+  ],
+  demoUrl: "#",
+  codeUrl: "https://github.com/shivasubrahmanya/SynergySpherre",
+  features: [
+    "JWT-based authentication and role management",
+    "Project and task management system",
+    "Real-time collaboration using WebSockets",
+    "In-app and email notifications",
+    "Responsive modern UI",
+    "Secure backend with FastAPI and MySQL"
+  ],
+},
+{
+  id: "08",
+  title: "College Mentorship Platform",
+  description:
+    "A full-stack mentorship platform connecting college seniors (mentors) with juniors (mentees), featuring role-based access, resources sharing, leaderboards, and admin moderation.",
+  icon: <Users size={20} />,
+  technologies: [
+    "FastAPI",
+    "React",
+    "TypeScript",
+    "MySQL",
+    "SQLAlchemy",
+    "JWT",
+    "Tailwind CSS"
+  ],
+  demoUrl: "#",
+  codeUrl: "https://github.com/shivasubrahmanya/College-Placement-Mentorship",
+  features: [
+    "JWT-based authentication with role-based access",
+    "Mentor directory with advanced filters",
+    "Posts and resources with admin moderation",
+    "Real-time chat using polling",
+    "Leaderboard with DB triggers and procedures",
+    "Admin dashboard and verification workflow"
+  ],
+}
 
   ];
 
