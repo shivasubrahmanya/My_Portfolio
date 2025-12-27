@@ -43,17 +43,17 @@
 }
 
 .profile-image {
-    width: 12rem;
-    height: 12rem;
+    width: 20rem;
+    height: 20rem;
     object-fit: cover;
-    filter: grayscale(100%) contrast(125%);
+    filter: grayscale(75%);
     border: 1px solid rgba(15, 23, 42, 0.2);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1280px) {
     .profile-image {
-        width: 16rem;
-        height: 16rem;
+        width: 20rem;
+        height: 20rem;
     }
 }
 
