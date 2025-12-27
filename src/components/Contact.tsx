@@ -1,7 +1,46 @@
+import { useState } from 'react';
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 import "./Contact.css";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSend = () => {
+    const { name, email, message } = formData;
+
+    // 1. Rate Limit Check (Client-side)
+    const RATE_LIMIT_KEY = 'portfolio_last_contact_time';
+    const COOLDOWN_MS = 60000; // 60 seconds
+    const lastSent = localStorage.getItem(RATE_LIMIT_KEY);
+
+    if (lastSent) {
+      const timePassed = Date.now() - parseInt(lastSent);
+      if (timePassed < COOLDOWN_MS) {
+        const remaining = Math.ceil((COOLDOWN_MS - timePassed) / 1000);
+        alert(`// RATE_LIMIT_EXCEEDED\n\nPlease wait ${remaining} seconds before re-initiating communication sequence.`);
+        return;
+      }
+    }
+
+    // 2. Validation
+    if (!name || !email || !message) {
+      alert("Please fill in all fields before executing.");
+      return;
+    }
+
+    // 3. Update Email and Timestamp
+    localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
+
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+
+    window.location.href = `mailto:shivasubrahmanyakc@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+  };
+
   return (
     <section id="contact" className="contact-section">
       <div className="contact-container">
@@ -54,6 +93,8 @@ const Contact = () => {
                 <input
                   placeholder="_"
                   className="form-input"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
               </div>
 
@@ -63,6 +104,8 @@ const Contact = () => {
                   type="email"
                   placeholder="_"
                   className="form-input"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
               </div>
 
@@ -71,10 +114,12 @@ const Contact = () => {
                 <textarea
                   placeholder="// Type your message here..."
                   className="form-textarea"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 />
               </div>
 
-              <button className="submit-btn">
+              <button className="submit-btn" onClick={handleSend}>
                 <span className="mr-2">&gt; Execute_Send</span>
                 <Send size={12} style={{ marginLeft: '8px' }} />
               </button>

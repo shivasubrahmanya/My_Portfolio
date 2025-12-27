@@ -54,9 +54,14 @@ const Hero = () => {
             >
               [ View_Work ]
             </button>
-            <button className="btn btn-ghost" style={{ fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <a
+              href="/Shivasubrahmanya Resume.pdf"
+              download="Shivasubrahmanya Resume.pdf"
+              className="btn btn-ghost"
+              style={{ fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.05em', textDecoration: 'none' }}
+            >
               [ Download_Resume_v2.pdf ]
-            </button>
+            </a>
           </div>
 
           <div className="social-links">

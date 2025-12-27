@@ -7,10 +7,14 @@ body {
 
 button,
 a,
+select,
+[role="button"] {
+    cursor: pointer;
+}
+
 input,
-textarea,
-select {
-    cursor: none;
+textarea {
+    cursor: text;
 }
 
 /* --- BACKGROUND CANVAS --- */

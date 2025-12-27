@@ -37,11 +37,10 @@ const LINUX_LOGS: string[] = [
 ];
 
 const CURSOR_SNIPPETS = [
-    "void main()", "await fetch()", "return 0;", "0xFF",
-    "null", "NaN", "import React", "const data",
-    "let x=0", "404 Error", "git push", "npm install",
-    "TODO: Refactor", "print(x)", "echo $PATH",
-    "sudo apt", "grep -r", "chmod +x"
+    "run", "0xFF", "null", "NaN", "sys",
+    "git", "npm", "404", "src", "bin",
+    "opt", "dev", "usr", "var", "tmp",
+    "cmd", "exe", "bat", "sh", "env"
 ];
 
 // Particle Class adaptation
@@ -244,7 +243,7 @@ export const BackgroundEffect = () => {
         window.addEventListener('mouseover', handleMouseOver);
 
         // Init text
-        cursorEl.innerText = "System.ready";
+        cursorEl.innerText = "Ready";
 
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
