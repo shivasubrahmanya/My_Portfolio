@@ -55,8 +55,8 @@ const Hero = () => {
               [ View_Work ]
             </button>
             <a
-              href="/Shivasubrahmanya Resume.pdf"
-              download="Shivasubrahmanya Resume.pdf"
+              href="/Shivasubrahmanya_K_C_Resume.pdf"
+              download="Shivasubrahmanya_K_C_Resume.pdf"
               className="btn btn-ghost"
               style={{ fontFamily: 'var(--font-mono)', textTransform: 'uppercase', letterSpacing: '0.05em', textDecoration: 'none' }}
             >
@@ -87,5 +87,6 @@ const Hero = () => {
     </section>
   );
 };
+
 
 export default Hero;
