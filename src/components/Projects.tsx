@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell, Brain } from "lucide-react";
+import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell, Brain, HeartPulse } from "lucide-react";
 import "./Projects.css";
 
 const Projects = () => {
@@ -156,6 +156,35 @@ const Projects = () => {
     "Real-time chat using polling",
     "Leaderboard with DB triggers and procedures",
     "Admin dashboard and verification workflow"
+  ],
+  
+},
+{
+  id: "09",
+  title: "AI Health Tracker",
+  description:
+    "An AI-powered health tracking platform that helps users monitor daily health metrics, analyze meals and mood, and receive personalized insights to improve overall well-being.",
+  icon: <HeartPulse size={20} />,
+  technologies: [
+    "React 19",
+    "TypeScript",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "JWT",
+    "Recharts",
+    "AI Analytics"
+  ],
+  demoUrl: "#",
+  codeUrl: "https://github.com/shivasubrahmanya/Health-Tracker",
+  features: [
+    "Daily health score calculation (steps, water, sleep, mood)",
+    "AI-based health risk assessment",
+    "Smart food analysis (Healthy vs Junk detection)",
+    "Personalized AI diet plans & recommendations",
+    "Interactive dashboards with charts and trends",
+    "Mood & stress tracking with historical insights",
+    "Achievement badges and streak system"
   ],
 }
 
