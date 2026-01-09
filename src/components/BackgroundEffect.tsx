@@ -16,24 +16,45 @@ const CFG = {
 };
 
 const TECH_LOGOS = [
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg", // Google Colab
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg", // Elastic Stack
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
+    "https://huggingface.co/front/assets/huggingface_logo-noborder.svg", // Hugging Face
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg", // LLaMA (Meta)
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
 ];
 
 // Preload images
 const preloadedImages: HTMLImageElement[] = [];
 TECH_LOGOS.forEach(url => {
     const img = new Image();
+    img.crossOrigin = "Anonymous";
     img.src = url;
     preloadedImages.push(img);
 });
