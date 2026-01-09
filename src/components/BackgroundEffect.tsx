@@ -15,6 +15,29 @@ const CFG = {
     friction: 0.95
 };
 
+const TECH_LOGOS = [
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+];
+
+// Preload images
+const preloadedImages: HTMLImageElement[] = [];
+TECH_LOGOS.forEach(url => {
+    const img = new Image();
+    img.src = url;
+    preloadedImages.push(img);
+});
+
 const LINUX_LOGS: string[] = [
     "[  0.000000] Linux version 5.15.0-generic",
     "[  0.241005] BOOT_IMAGE=/boot/vmlinuz",
@@ -46,6 +69,8 @@ const CURSOR_SNIPPETS = [
 // Particle Class adaptation
 class Particle {
     text: string;
+    image: HTMLImageElement | null;
+    isImage: boolean;
     x: number;
     y: number;
     originX: number;
@@ -61,6 +86,8 @@ class Particle {
         this.width = width;
         this.height = height;
         this.text = "";
+        this.image = null;
+        this.isImage = false;
         this.x = 0;
         this.y = 0;
         this.originX = 0;
@@ -73,7 +100,17 @@ class Particle {
     }
 
     reset(randomY: boolean) {
-        this.text = LINUX_LOGS[Math.floor(Math.random() * LINUX_LOGS.length)];
+        // 60% chance to be a logo, 40% log text
+        this.isImage = Math.random() > 0.4;
+
+        if (this.isImage && preloadedImages.length > 0) {
+            this.image = preloadedImages[Math.floor(Math.random() * preloadedImages.length)];
+            this.text = "";
+        } else {
+            this.text = LINUX_LOGS[Math.floor(Math.random() * LINUX_LOGS.length)];
+            this.image = null;
+        }
+
         this.x = Math.random() * this.width;
         this.y = randomY ? Math.random() * this.height : this.height + 30;
         this.originX = this.x;
@@ -82,7 +119,7 @@ class Particle {
 
         // Depth logic
         this.z = Math.random() * 0.8 + 0.2;
-        this.size = 12 * this.z;
+        this.size = this.isImage ? 48 * this.z : 12 * this.z; // Images significantly larger
 
         // Base opacity
         this.opacityBase = (Math.random() * 0.4 + 0.1);
@@ -123,10 +160,27 @@ class Particle {
     }
 
     draw(ctx: CanvasRenderingContext2D) {
-        ctx.font = `600 ${this.size}px 'JetBrains Mono'`;
-        // Dark text for light theme
-        ctx.fillStyle = `rgba(0,0,0,${this.opacity})`;
-        ctx.fillText(this.text, this.x, this.y);
+        ctx.globalAlpha = this.opacity;
+
+        if (this.isImage && this.image) {
+            // Draw Image
+            try {
+                ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
+            } catch (e) {
+                // Fallback if image fails to draw
+                ctx.font = `600 ${this.size}px 'JetBrains Mono'`;
+                ctx.fillStyle = `rgb(0,0,0)`;
+                ctx.fillText("?", this.x, this.y);
+            }
+        } else {
+            // Draw Text
+            ctx.font = `600 ${this.size}px 'JetBrains Mono'`;
+            // Dark text for light theme
+            ctx.fillStyle = `rgb(0,0,0)`;
+            ctx.fillText(this.text, this.x, this.y);
+        }
+
+        ctx.globalAlpha = 1.0; // Reset alpha
     }
 }
 
@@ -260,3 +314,4 @@ export const BackgroundEffect = () => {
         </>
     );
 };
+
