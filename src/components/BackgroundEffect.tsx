@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useTheme } from './ThemeProvider';
 import './BackgroundEffect.css';
 
 const GITHUB = {
@@ -102,10 +103,12 @@ class Particle {
     opacity: number;
     width: number;
     height: number;
+    theme: 'light' | 'dark';
 
-    constructor(width: number, height: number) {
+    constructor(width: number, height: number, theme: 'light' | 'dark') {
         this.width = width;
         this.height = height;
+        this.theme = theme;
         this.text = "";
         this.image = null;
         this.isImage = false;
@@ -190,14 +193,14 @@ class Particle {
             } catch (e) {
                 // Fallback if image fails to draw
                 ctx.font = `600 ${this.size}px 'JetBrains Mono'`;
-                ctx.fillStyle = `rgb(0,0,0)`;
+                ctx.fillStyle = this.theme === 'dark' ? `rgb(248,250,252)` : `rgb(0,0,0)`;
                 ctx.fillText("?", this.x, this.y);
             }
         } else {
             // Draw Text
             ctx.font = `600 ${this.size}px 'JetBrains Mono'`;
-            // Dark text for light theme
-            ctx.fillStyle = `rgb(0,0,0)`;
+            // Dynamic text color based on theme
+            ctx.fillStyle = this.theme === 'dark' ? `rgb(248,250,252)` : `rgb(0,0,0)`;
             ctx.fillText(this.text, this.x, this.y);
         }
 
@@ -207,6 +210,7 @@ class Particle {
 
 
 export const BackgroundEffect = () => {
+    const { theme } = useTheme();
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const cursorRef = useRef<HTMLDivElement>(null);
     const particlesRef = useRef<Particle[]>([]);
@@ -228,7 +232,7 @@ export const BackgroundEffect = () => {
             canvas.height = height;
             particlesRef.current = [];
             for (let i = 0; i < CFG.particleCount; i++) {
-                particlesRef.current.push(new Particle(width, height));
+                particlesRef.current.push(new Particle(width, height, theme));
             }
         };
 
@@ -276,7 +280,7 @@ export const BackgroundEffect = () => {
             window.removeEventListener('resize', resize);
             cancelAnimationFrame(animationFrameRef.current);
         };
-    }, []);
+    }, [theme]);
 
     useEffect(() => {
         // Cursor Logic

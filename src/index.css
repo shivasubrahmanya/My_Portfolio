@@ -22,6 +22,23 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
+.dark {
+  --color-background: #000000;
+  /* Pure Black */
+  --color-foreground: #f8fafc;
+  /* Slate 50 */
+  --color-primary: #f8fafc;
+  --color-primary-foreground: #000000;
+  --color-secondary: #0f172a;
+  /* Slate 900 */
+  --color-secondary-foreground: #f8fafc;
+  --color-muted: #0f172a;
+  --color-muted-foreground: #94a3b8;
+  /* Slate 400 */
+  --color-border: #1e293b;
+  /* Slate 800 */
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

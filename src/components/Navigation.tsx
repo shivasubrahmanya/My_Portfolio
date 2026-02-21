@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 import "./Navigation.css";
 
 const Navigation = () => {
+  const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -43,6 +45,13 @@ const Navigation = () => {
               [{item.name}]
             </button>
           ))}
+          <button
+            onClick={toggleTheme}
+            className="nav-link theme-toggle"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -67,6 +76,15 @@ const Navigation = () => {
               {item.name}
             </button>
           ))}
+          <button
+            onClick={() => {
+              toggleTheme();
+              setIsMobileMenuOpen(false);
+            }}
+            className="mobile-nav-link"
+          >
+            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+          </button>
         </div>
       )}
     </nav>

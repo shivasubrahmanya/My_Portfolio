@@ -41,7 +41,19 @@ textarea {
     /* Above canvas */
     pointer-events: none;
     /* Very subtle mask to keep center readable attempting to match hello.html */
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(circle at center, var(--color-background-mask-center) 0%, var(--color-background-mask-mid) 40%, var(--color-background-mask-edge) 100%);
+}
+
+:root {
+    --color-background-mask-center: rgba(255, 255, 255, 0.95);
+    --color-background-mask-mid: rgba(255, 255, 255, 0.8);
+    --color-background-mask-edge: rgba(255, 255, 255, 0);
+}
+
+.dark {
+    --color-background-mask-center: rgba(0, 0, 0, 0.95);
+    --color-background-mask-mid: rgba(0, 0, 0, 0.8);
+    --color-background-mask-edge: rgba(0, 0, 0, 0);
 }
 
 /* --- GHOST CURSOR --- */
@@ -54,14 +66,14 @@ textarea {
     font-family: 'JetBrains Mono', monospace;
     font-size: 13px;
     font-weight: 600;
-    color: #4b5563;
-    /* Slate 600 - Visible on light background */
+    color: var(--color-foreground);
+    /* Dynamic color based on theme */
     white-space: nowrap;
     transform: translate(14px, 14px);
     transition: transform 0.1s ease, font-weight 0.1s ease;
     mix-blend-mode: difference;
     /* Optional: ensures visibility on all backgrounds */
-    text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.8), 1px -1px 0 rgba(255, 255, 255, 0.8), -1px 1px 0 rgba(255, 255, 255, 0.8), 1px 1px 0 rgba(255, 255, 255, 0.8);
+    text-shadow: -1px -1px 0 var(--color-background), 1px -1px 0 var(--color-background), -1px 1px 0 var(--color-background), 1px 1px 0 var(--color-background);
 }
 
 #code-cursor::after {
