@@ -17,6 +17,7 @@ Visit the live portfolio: [Your Portfolio URL]
 - [Deployment](#deployment)
 - [Contributing](#contributing)
 
+
 ## 📖 About
 
 This portfolio website represents Shivasubrahmanya K C, a passionate Data Science & Machine Learning Engineer currently pursuing CSE-AIML at Sahyadri College. The website showcases projects, skills, experience, and educational background in an interactive and visually appealing format.
