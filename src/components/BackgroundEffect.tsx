@@ -155,13 +155,13 @@ class Particle {
         this.y += (CFG.scrollSpeed * this.z);
 
         // --- SUBTLE PHYSICS ---
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
         if (distance < CFG.mouseRadius) {
-            let force = (CFG.mouseRadius - distance) / CFG.mouseRadius;
-            let pushX = (dx / distance) * force * CFG.mouseForce * -5;
+            const force = (CFG.mouseRadius - distance) / CFG.mouseRadius;
+            const pushX = (dx / distance) * force * CFG.mouseForce * -5;
 
             this.vx += pushX;
 
@@ -172,7 +172,7 @@ class Particle {
         }
 
         // Smooth drift back to original X lane
-        let returnForce = (this.originX - this.x) * 0.05;
+        const returnForce = (this.originX - this.x) * 0.05;
         this.vx += returnForce;
 
         // Apply friction
