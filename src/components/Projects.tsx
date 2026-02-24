@@ -107,86 +107,86 @@ const Projects = () => {
       ],
     },
     {
-  id: "07",
-  title: "SynergySphere – Team Collaboration MVP",
-  description:
-    "A full-stack team collaboration MVP that enables project management, task tracking, real-time communication, and smart notifications with a modern, responsive UI.",
-  icon: <Users size={20} />,
-  technologies: [
-    "React",
-    "TypeScript",
-    "FastAPI",
-    "MySQL",
-    "WebSockets",
-    "JWT",
-    "CSS3"
-  ],
-  demoUrl: "#",
-  codeUrl: "https://github.com/shivasubrahmanya/SynergySpherre",
-  features: [
-    "JWT-based authentication and role management",
-    "Project and task management system",
-    "Real-time collaboration using WebSockets",
-    "In-app and email notifications",
-    "Responsive modern UI",
-    "Secure backend with FastAPI and MySQL"
-  ],
-},
-{
-  id: "08",
-  title: "College Mentorship Platform",
-  description:
-    "A full-stack mentorship platform connecting college seniors (mentors) with juniors (mentees), featuring role-based access, resources sharing, leaderboards, and admin moderation.",
-  icon: <Users size={20} />,
-  technologies: [
-    "FastAPI",
-    "React",
-    "TypeScript",
-    "MySQL",
-    "SQLAlchemy",
-    "JWT",
-    "Tailwind CSS"
-  ],
-  demoUrl: "#",
-  codeUrl: "https://github.com/shivasubrahmanya/College-Placement-Mentorship",
-  features: [
-    "JWT-based authentication with role-based access",
-    "Mentor directory with advanced filters",
-    "Posts and resources with admin moderation",
-    "Real-time chat using polling",
-    "Leaderboard with DB triggers and procedures",
-    "Admin dashboard and verification workflow"
-  ],
-  
-},
-{
-  id: "09",
-  title: "AI Health Tracker",
-  description:
-    "An AI-powered health tracking platform that helps users monitor daily health metrics, analyze meals and mood, and receive personalized insights to improve overall well-being.",
-  icon: <HeartPulse size={20} />,
-  technologies: [
-    "React 19",
-    "TypeScript",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "JWT",
-    "Recharts",
-    "AI Analytics"
-  ],
-  demoUrl: "#",
-  codeUrl: "https://github.com/shivasubrahmanya/Health-Tracker",
-  features: [
-    "Daily health score calculation (steps, water, sleep, mood)",
-    "AI-based health risk assessment",
-    "Smart food analysis (Healthy vs Junk detection)",
-    "Personalized AI diet plans & recommendations",
-    "Interactive dashboards with charts and trends",
-    "Mood & stress tracking with historical insights",
-    "Achievement badges and streak system"
-  ],
-}
+      id: "07",
+      title: "SynergySphere – Team Collaboration MVP",
+      description:
+        "A full-stack team collaboration MVP that enables project management, task tracking, real-time communication, and smart notifications with a modern, responsive UI.",
+      icon: <Users size={20} />,
+      technologies: [
+        "React",
+        "TypeScript",
+        "FastAPI",
+        "MySQL",
+        "WebSockets",
+        "JWT",
+        "CSS3"
+      ],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/SynergySpherre",
+      features: [
+        "JWT-based authentication and role management",
+        "Project and task management system",
+        "Real-time collaboration using WebSockets",
+        "In-app and email notifications",
+        "Responsive modern UI",
+        "Secure backend with FastAPI and MySQL"
+      ],
+    },
+    {
+      id: "08",
+      title: "College Mentorship Platform",
+      description:
+        "A full-stack mentorship platform connecting college seniors (mentors) with juniors (mentees), featuring role-based access, resources sharing, leaderboards, and admin moderation.",
+      icon: <Users size={20} />,
+      technologies: [
+        "FastAPI",
+        "React",
+        "TypeScript",
+        "MySQL",
+        "SQLAlchemy",
+        "JWT",
+        "Tailwind CSS"
+      ],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/College-Placement-Mentorship",
+      features: [
+        "JWT-based authentication with role-based access",
+        "Mentor directory with advanced filters",
+        "Posts and resources with admin moderation",
+        "Real-time chat using polling",
+        "Leaderboard with DB triggers and procedures",
+        "Admin dashboard and verification workflow"
+      ],
+
+    },
+    {
+      id: "09",
+      title: "AI Health Tracker",
+      description:
+        "An AI-powered health tracking platform that helps users monitor daily health metrics, analyze meals and mood, and receive personalized insights to improve overall well-being.",
+      icon: <HeartPulse size={20} />,
+      technologies: [
+        "React 19",
+        "TypeScript",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JWT",
+        "Recharts",
+        "AI Analytics"
+      ],
+      demoUrl: "https://health-tracker-nine-indol.vercel.app/",
+      codeUrl: "https://github.com/shivasubrahmanya/Health-Tracker",
+      features: [
+        "Daily health score calculation (steps, water, sleep, mood)",
+        "AI-based health risk assessment",
+        "Smart food analysis (Healthy vs Junk detection)",
+        "Personalized AI diet plans & recommendations",
+        "Interactive dashboards with charts and trends",
+        "Mood & stress tracking with historical insights",
+        "Achievement badges and streak system"
+      ],
+    }
 
   ];
 
@@ -204,7 +204,7 @@ const Projects = () => {
         </div>
 
         <div className="projects-list">
-          {projects.map((project, index) => (
+          {[...projects].reverse().map((project, index) => (
             <div
               key={project.title}
               className="project-item"
@@ -212,7 +212,7 @@ const Projects = () => {
               <div className="project-grid">
                 {/* ID & Icon */}
                 <div className="project-meta">
-                  <span className="project-id">#{project.id}</span>
+                  <span className="project-id">#{String(index + 1).padStart(2, '0')}</span>
                   <div className="project-icon-wrapper">
                     {project.icon}
                   </div>
