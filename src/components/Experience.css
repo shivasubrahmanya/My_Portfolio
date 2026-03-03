@@ -1,8 +1,14 @@
 /* Experience.css */
 .experience-section {
-    padding: 5rem 0;
+    padding: 3rem 0;
     position: relative;
     background-color: var(--color-background);
+}
+
+@media (min-width: 768px) {
+    .experience-section {
+        padding: 5rem 0;
+    }
 }
 
 .experience-bg-gradient {
@@ -27,10 +33,17 @@
 }
 
 .experience-title {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--color-foreground);
+}
+
+@media (min-width: 768px) {
+    .experience-title {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -40,10 +53,16 @@
 }
 
 .experience-subtitle {
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--color-muted-foreground);
     max-width: 48rem;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .experience-subtitle {
+        font-size: 1.25rem;
+    }
 }
 
 .experience-card-wrapper {
@@ -86,7 +105,7 @@
 }
 
 .experience-role-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -94,6 +113,12 @@
     margin-bottom: 0.5rem;
     color: var(--color-foreground);
     transition: color 0.2s;
+}
+
+@media (min-width: 768px) {
+    .experience-role-title {
+        font-size: 1.5rem;
+    }
 }
 
 .experience-card:hover .experience-role-title {

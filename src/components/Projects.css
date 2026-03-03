@@ -14,8 +14,17 @@
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+    .projects-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
 }
 
 .projects-title-group {
@@ -33,10 +42,16 @@
 }
 
 .projects-heading {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.025em;
     color: var(--color-foreground);
+}
+
+@media (min-width: 768px) {
+    .projects-heading {
+        font-size: 1.875rem;
+    }
 }
 
 .projects-count {
@@ -60,9 +75,15 @@
 
 .project-item {
     border-bottom: 1px solid var(--color-border);
-    padding: 3rem 0;
+    padding: 1.5rem 0;
     transition: background-color 0.2s;
     background-color: transparent;
+}
+
+@media (min-width: 768px) {
+    .project-item {
+        padding: 3rem 0;
+    }
 }
 
 .project-item:hover {
@@ -136,10 +157,16 @@
 }
 
 .project-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-foreground);
     transition: color 0.2s;
+}
+
+@media (min-width: 768px) {
+    .project-title {
+        font-size: 1.5rem;
+    }
 }
 
 .project-item:hover .project-title {

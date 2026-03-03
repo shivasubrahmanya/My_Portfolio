@@ -1,7 +1,13 @@
 /* Skills.css */
 .skills-section {
-    padding: 6rem 0;
+    padding: 3rem 0;
     border-bottom: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+    .skills-section {
+        padding: 6rem 0;
+    }
 }
 
 .skills-wrapper {
@@ -42,10 +48,16 @@
 }
 
 .skills-heading {
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.025em;
     color: var(--color-foreground);
+}
+
+@media (min-width: 768px) {
+    .skills-heading {
+        font-size: 1.875rem;
+    }
 }
 
 .skills-description {

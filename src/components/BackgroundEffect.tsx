@@ -9,7 +9,7 @@ const GITHUB = {
 };
 
 const CFG = {
-    particleCount: 60,   // Adjustable
+    particleCount: window.innerWidth < 768 ? 25 : 60,   // Reduced for mobile
     scrollSpeed: -0.8,
     mouseRadius: 150,
     mouseForce: 0.15,
@@ -143,7 +143,8 @@ class Particle {
 
         // Depth logic
         this.z = Math.random() * 0.8 + 0.2;
-        this.size = this.isImage ? 48 * this.z : 12 * this.z; // Images significantly larger
+        const baseSize = window.innerWidth < 768 ? 24 : 48;
+        this.size = this.isImage ? baseSize * this.z : (baseSize / 4) * this.z; // Scale for mobile
 
         // Base opacity
         this.opacityBase = (Math.random() * 0.4 + 0.1);
@@ -231,7 +232,8 @@ export const BackgroundEffect = () => {
             canvas.width = width;
             canvas.height = height;
             particlesRef.current = [];
-            for (let i = 0; i < CFG.particleCount; i++) {
+            const count = width < 768 ? 25 : CFG.particleCount;
+            for (let i = 0; i < count; i++) {
                 particlesRef.current.push(new Particle(width, height, theme));
             }
         };
@@ -331,9 +333,12 @@ export const BackgroundEffect = () => {
         };
     }, []);
 
+    // Detect touch device
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
     return (
         <>
-            <div id="code-cursor" ref={cursorRef} />
+            {!isTouchDevice && <div id="code-cursor" ref={cursorRef} />}
             <div className="background-mask" />
             <canvas id="terminal-canvas" ref={canvasRef} />
         </>
