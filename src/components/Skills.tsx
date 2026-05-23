@@ -4,23 +4,62 @@ const Skills = () => {
   const skillCategories = [
     {
       id: "SYS_01",
-      title: "Data Science & Analysis",
-      skills: ["Numpy", "Pandas", "Scikit-Learn", "Matplotlib"]
+      title: "Languages",
+      skills: ["Python", "SQL", "Java", "C/C++", "HTML/CSS", "JavaScript"]
     },
     {
       id: "SYS_02",
-      title: "AI & Machine Learning",
-      skills: ["Deep Learning", "Neural Networks", "TensorFlow", "PyTorch"]
+      title: "Frameworks & Libraries",
+      skills: ["PyTorch", "TensorFlow", "NumPy", "Pandas", "Matplotlib", "React", "Node.js", "Express.js"]
     },
     {
       id: "SYS_03",
-      title: "Core Engineering",
-      skills: ["Python", "SQL", "JavaScript", "HTML/CSS", "R", "Java", "C/C++"]
+      title: "Databases & Stack",
+      skills: ["MongoDB", "MERN Stack"]
     },
     {
       id: "SYS_04",
-      title: "Tools & Infrastructure",
-      skills: ["Microsoft Power BI", "Git", "Jupyter", "GitHub"]
+      title: "AI, ML & Data Science",
+      skills: [
+        "Machine Learning",
+        "Deep Learning",
+        "Data Science",
+        "Data Analysis",
+        "Data Visualization",
+        "Feature Engineering",
+        "Model Training & Evaluation",
+        "Predictive Modeling"
+      ]
+    },
+    {
+      id: "SYS_05",
+      title: "Tools & Platforms",
+      skills: [
+        "Git",
+        "GitHub",
+        "Jupyter",
+        "Vercel",
+        "MongoDB Atlas",
+        "Postman",
+        "n8n",
+        "Microsoft Power BI",
+        "Figma",
+        "Miro",
+        "Canva"
+      ]
+    },
+    {
+      id: "SYS_06",
+      title: "Soft Skills & Contributions",
+      skills: [
+        "Strategic Thinking",
+        "Problem-Solving",
+        "Collaboration",
+        "Leadership",
+        "Teaching & Mentoring",
+        "140+ LeetCode Solved",
+        "Open Source Contributor"
+      ]
     }
   ];
 
