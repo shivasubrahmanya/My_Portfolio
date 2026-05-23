@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell, Brain, HeartPulse } from "lucide-react";
+import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell, Brain, HeartPulse, Bot, Activity } from "lucide-react";
 import "./Projects.css";
 
 const Projects = () => {
@@ -186,8 +186,67 @@ const Projects = () => {
         "Mood & stress tracking with historical insights",
         "Achievement badges and streak system"
       ],
+    },
+    {
+      id: "10",
+      title: "Sasta OpenClaw — Gemini Gateway",
+      description: "A lightweight, multi-gateway AI agent orchestrator powered by Google's Gemini API. Supports dual-interface access through an HTTP REST API and a Telegram bot, featuring integrated tool-calling, persistent session storage, and long-term semantic memory.",
+      icon: <Bot size={20} />,
+      technologies: ["Python", "Gemini API", "Telegram Bot API", "REST API", "Semantic Memory", "Tool Calling"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/sasta_openclaw",
+      features: [
+        "Telegram & REST API gateways with session persistence",
+        "Tool integration for file system operations, shell commands, and web search",
+        "Semantic search long-term memory via custom embeddings",
+        "Automated command safety checker and robust permission system"
+      ],
+    },
+    {
+      id: "11",
+      title: "RIDA — Rare Intelligence for Disease Analysis",
+      description: "A clinical decision support platform designed to reduce diagnostic delay for rare diseases. Combines a Heterogeneous Graph Neural Network (HeteroGNN) reasoning over a massive Orphanet/HPO/OMIM biomedical knowledge graph with a BioBERT + FAISS semantic retrieval pipeline.",
+      icon: <Activity size={20} />,
+      technologies: ["PyTorch Geometric", "BioBERT", "FAISS", "FastAPI", "React", "Express", "MongoDB Atlas"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/RIDA---Rare-Intelligence-for-Disease-Analysis",
+      features: [
+        "Multi-ontology Knowledge Graph (Orphanet, HPO, OMIM integration)",
+        "HeteroGNN model ranking potential differential diagnoses",
+        "BioBERT + FAISS semantic similarity search for fast symptom query resolution",
+        "Privacy-first clinical decision support with zero patient data storage"
+      ],
+    },
+    {
+      id: "12",
+      title: "NeuralScan AI — EEG-based Brain Disorder Classification",
+      description: "An end-to-end neuro-diagnostic ML pipeline and full-stack interactive dashboard for analyzing 19-Channel electroencephalography (EEG) data. Classifies Alzheimer’s Disease, Frontotemporal Dementia, and Cognitively Normal profiles using CNN-BiLSTM and Graph Convolutional Networks (GCN).",
+      icon: <Brain size={20} />,
+      technologies: ["TensorFlow 2", "MNE-Python", "FastAPI", "React", "react-force-graph-2d", "GCN", "Signal Processing"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/NeuralScan-AI-EEG-based-Brain-Disorder-Classification",
+      features: [
+        "Hybrid CNN-BiLSTM temporal classifier with Spatial Attention",
+        "Functional connectivity networks built via 19x19 coherence adjacency matrices",
+        "Interactive 3-layer Graph Convolutional Network (GCN)",
+        "Dynamic brain topomaps rendered live on a modern dashboard"
+      ],
+    },
+    {
+      id: "13",
+      title: "RxSignal — Drug Interaction Risk Intelligence Platform",
+      description: "A real-time drug safety intelligence system that processes all 1.06 billion rows of FDA FAERS 2025 adverse event data. Combines statistical pharmacovigilance metrics (PRR/ROR) with XGBoost and a 13,160-node GraphSAGE GNN to deliver interaction risk assessments in under one second.",
+      icon: <HeartPulse size={20} />,
+      technologies: ["XGBoost", "PyTorch Geometric", "FastAPI", "React", "DuckDB", "Apache Parquet", "Graph Neural Networks"],
+      demoUrl: "#",
+      codeUrl: "https://github.com/shivasubrahmanya/RxSignal-Drug-Interaction-Risk-Intelligence-Platform",
+      features: [
+        "Out-of-core DuckDB processing over 1.06B records on consumer hardware",
+        "90.63% accuracy and 99.35% recall optimized for patient safety",
+        "GraphSAGE GNN predicting risk scores on a 1.96M edge drug network",
+        "FastAPI backend with pre-computed node embeddings for O(1) inference latency"
+      ],
     }
-
   ];
 
   return (
