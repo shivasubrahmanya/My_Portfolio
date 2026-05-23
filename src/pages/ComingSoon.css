@@ -1,0 +1,267 @@
+/* ComingSoon.css - Full-Page Charcoal & Emerald Adaptive Console */
+
+.cs-coming-soon-container {
+    width: 100%;
+    min-height: calc(100vh - 5.5rem); /* Fill viewport between Header (3.5rem) and StatusBar (2rem) */
+    margin-top: 3.5rem; /* space for fixed top header */
+    margin-bottom: 2rem; /* space for fixed bottom status bar */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.cs-terminal-box {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background) !important; /* Crisp white in light, pure black in dark */
+    border-left: 1px solid var(--color-border) !important;
+    border-right: 1px solid var(--color-border) !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-radius: 0 !important; /* Full edge stretch */
+    box-shadow: none !important;
+    font-family: var(--font-mono);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.cs-terminal-title-bar {
+    background-color: var(--color-muted) !important; /* Light Slate gray in light, dark Slate in dark */
+    border-bottom: 1px solid var(--color-border) !important;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.cs-terminal-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.cs-terminal-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+}
+
+.cs-terminal-dot.red { background-color: #ef4444; }
+.cs-terminal-dot.yellow { background-color: #eab308; }
+.cs-terminal-dot.green { background-color: #22c55e; }
+
+.cs-terminal-title {
+    font-size: 0.75rem;
+    color: var(--color-muted-foreground) !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.cs-terminal-body {
+    background-color: var(--color-background) !important;
+    padding: 1.5rem;
+    color: var(--color-foreground) !important; /* Slate 900 in light, Slate 50 in dark */
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .cs-terminal-body {
+        padding: 3rem;
+        font-size: 0.875rem;
+    }
+}
+
+.cs-terminal-line {
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Charcoal configuration labels for realistic console feel */
+.cs-terminal-label {
+    color: var(--color-muted-foreground) !important; /* Elegant slate gray */
+    margin-right: 0.75rem;
+    font-weight: 600;
+}
+
+.cs-terminal-value {
+    color: var(--color-foreground) !important; /* Slate 900 or white */
+}
+
+/* Green highlight for bootstrap console command line */
+.cs-terminal-bootstrap {
+    color: #059669 !important; /* Deep emerald green */
+    font-weight: 600;
+}
+
+.dark .cs-terminal-bootstrap {
+    color: #34d399 !important; /* Bright neon emerald green in dark mode */
+}
+
+/* ASCII Banner - Sleek charcoal/slate with subtle text shadow */
+.cs-ascii-art {
+    display: block;
+    white-space: pre;
+    color: var(--color-foreground) !important;
+    opacity: 0.85;
+    font-size: 0.45rem;
+    line-height: 1.2;
+    overflow-x: auto;
+    padding-bottom: 2rem;
+    margin: 0;
+    font-family: var(--font-mono);
+    scrollbar-width: none;
+}
+
+.cs-ascii-art::-webkit-scrollbar {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .cs-ascii-art {
+        font-size: 0.75rem;
+    }
+}
+
+/* Progress bar loaders styling */
+.cs-progress-container {
+    margin: 2rem 0;
+    font-family: var(--font-mono);
+    max-width: 600px;
+    width: 100%;
+}
+
+.cs-progress-text-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--color-muted-foreground) !important;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.cs-progress-bar-track {
+    width: 100%;
+    height: 1.25rem;
+    background-color: var(--color-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+}
+
+.cs-progress-bar-fill {
+    height: 70%;
+    background-color: #059669 !important; /* Emerald green fill loading blocks */
+    box-shadow: 0 0 8px rgba(5, 150, 105, 0.2);
+    transition: width 100ms ease-out;
+}
+
+.dark .cs-progress-bar-fill {
+    background-color: #34d399 !important;
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+}
+
+.cs-coming-soon-badge {
+    display: inline-block;
+    background-color: var(--color-secondary) !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-foreground) !important; /* Sleek monochrome styling */
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    border-radius: 4px;
+    letter-spacing: 0.2em;
+    margin: 2rem 0;
+    text-transform: uppercase;
+    align-self: flex-start;
+    animation: csPulse 2s infinite ease-in-out;
+}
+
+.cs-terminal-prompt {
+    display: flex;
+    align-items: center;
+    margin-top: auto; /* Pin prompt to the bottom of our spacious console viewport */
+    border-top: 1px solid var(--color-border) !important;
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.cs-terminal-prompt-symbol {
+    color: #059669 !important; /* Emerald Green */
+    margin-right: 0.5rem;
+    font-weight: 700;
+}
+
+.dark .cs-terminal-prompt-symbol {
+    color: #34d399 !important; /* Neon Emerald in dark mode */
+}
+
+.cs-blinking-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background-color: var(--color-foreground) !important;
+    margin-left: 4px;
+    animation: csBlink 1s infinite steps(2, start);
+}
+
+.cs-terminal-actions {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.cs-back-btn {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.05em;
+    gap: 0.5rem;
+    background-color: transparent !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-foreground) !important;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    padding: 0.5rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cs-back-btn:hover {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-muted-foreground) !important;
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes csBlink {
+    to { visibility: hidden; }
+}
+
+@keyframes csPulse {
+    0%, 100% {
+        opacity: 0.9;
+        transform: scale(1.0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.03);
+    }
+}
