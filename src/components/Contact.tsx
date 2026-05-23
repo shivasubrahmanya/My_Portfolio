@@ -36,9 +36,10 @@ const Contact = () => {
     localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
 
     const subject = `Portfolio Contact from ${name}`;
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+    const body = `${message}\n\nBest Regards\nContact Details:\nName: ${name}\nEmail: ${email}`;
 
-    window.location.href = `mailto:shivasubrahmanyakc@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=shivasubrahmanyakc@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank');
   };
 
   return (

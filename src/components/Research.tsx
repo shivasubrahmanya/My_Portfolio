@@ -1,4 +1,5 @@
 import { Activity, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Research.css";
 
 const Research = () => {
@@ -79,15 +80,25 @@ const Research = () => {
 
                                 {/* Actions */}
                                 <div className="research-actions">
-                                    <a
-                                        href={item.linkUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="btn btn-primary research-btn"
-                                    >
-                                        <ExternalLink size={12} />
-                                        View_Abstract
-                                    </a>
+                                    {item.linkUrl && item.linkUrl !== "#" && item.linkUrl !== "/Shivasubrahmanya_K_C_Resume.pdf" ? (
+                                        <a
+                                            href={item.linkUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="btn btn-primary research-btn"
+                                        >
+                                            <ExternalLink size={12} />
+                                            View_Abstract
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            to={`/coming-soon?project=${encodeURIComponent(item.title)}`}
+                                            className="btn btn-primary research-btn"
+                                        >
+                                            <ExternalLink size={12} />
+                                            View_Abstract
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>

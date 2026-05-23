@@ -1,4 +1,5 @@
 import { ExternalLink, Github, Clock, Users, Utensils, Mail, Bell, Brain, HeartPulse, Bot, Activity } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./Projects.css";
 
 const Projects = () => {
@@ -299,15 +300,25 @@ const Projects = () => {
 
                 {/* Actions */}
                 <div className="project-actions">
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary project-btn"
-                  >
-                    <ExternalLink size={12} />
-                    View_Demo
-                  </a>
+                  {project.demoUrl && project.demoUrl !== "#" ? (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary project-btn"
+                    >
+                      <ExternalLink size={12} />
+                      View_Demo
+                    </a>
+                  ) : (
+                    <Link
+                      to={`/coming-soon?project=${encodeURIComponent(project.title)}`}
+                      className="btn btn-primary project-btn"
+                    >
+                      <ExternalLink size={12} />
+                      View_Demo
+                    </Link>
+                  )}
                   <a
                     href={project.codeUrl}
                     target="_blank"
